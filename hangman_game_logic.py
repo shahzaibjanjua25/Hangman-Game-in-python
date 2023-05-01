@@ -4,8 +4,9 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPainter, QPen
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QMessageBox
 class GameLogic:
-    def __init__(self):
-        self.words = ['python', 'java', 'javascript', 'ruby', 'php', 'csharp', 'swift', 'kotlin']
+    def __init__(self, file_name):
+        with open(file_name, 'r') as f:
+            self.words = [word.strip() for word in f.readlines()]
         self.current_word = ''
         self.guessed_letters = []
         self.num_guesses = 0

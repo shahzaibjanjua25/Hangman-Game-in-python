@@ -21,7 +21,8 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
 
     # Create the GameLogic instance
-    game_logic = GameLogic()
+    game_logic = GameLogic('words.txt')
+
 
     # Create the UI instance and show it
     ui = UI(game_logic)
